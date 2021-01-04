@@ -11,28 +11,54 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "forename")
+    private String forename;
+
+    @Column(name = "surname")
+    private String surname;
+
+    @Column(name = "title")
+    private String title;
 
     @Column(name = "type")
     private String type;
 
-    public Client (String name, String type) {
-        this.name = name;
+    public Client(String forename, String surname, String title, String type) {
+        this.forename = forename;
+        this.surname = surname;
+        this.title = title;
         this.type = type;
     }
 
-    // Empty constructor for Hibernate
-    public Client () {
-
+    public Client() {
     }
 
-    public Long getId() {
-        return id;
+    public Long getId() { return id; }
+
+    public void setId(Long id) { this.id = id; }
+
+    public String getForename() {
+        return forename;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setForename(String forename) {
+        this.forename = forename;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getType() {
@@ -41,13 +67,5 @@ public class Client {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

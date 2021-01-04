@@ -1,7 +1,7 @@
 package com.clients.organiser.controllers;
 
-import com.clients.organiser.models.Client;
-import com.clients.organiser.repositories.ClientRepository;
+import com.clients.organiser.models.ClientRecord;
+import com.clients.organiser.repositories.ClientRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/clients")
-public class ClientController {
+@RequestMapping(value = "/client_records")
+public class ClientRecordController {
     @Autowired
-    ClientRepository clientRepository;
+    ClientRecordRepository clientRecordRepository;
 
     @GetMapping
-    public List<Client> getAllClients() {
-        return clientRepository.findAll();
+    public List<ClientRecord> getAllClientRecords() {
+        return clientRecordRepository.findAll();
     }
 }
